@@ -215,9 +215,9 @@ function initExcludePage() {
         searchBar.classList.remove('show');
         document.querySelectorAll('.search-bg').forEach(el => el.classList.remove('hide'));
         searchQuery = '';
-        searchInput.value = '';
         searchInput.blur();
-        if (e && e.isTrusted) {
+        if (e && e.isTrusted && searchInput.value !== '') {
+            searchInput.value = '';
             renderAppList();
         }
     };
